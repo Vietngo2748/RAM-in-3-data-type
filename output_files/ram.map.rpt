@@ -1,0 +1,646 @@
+Analysis & Synthesis report for ram
+Tue Jan 02 23:34:04 2024
+Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. User-Specified and Inferred Latches
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 12. Parameter Settings for User Entity Instance: Top-level Entity: |ram
+ 13. Post-Synthesis Netlist Statistics for Top Partition
+ 14. Elapsed Time Per Partition
+ 15. Analysis & Synthesis Messages
+ 16. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Tue Jan 02 23:34:04 2024       ;
+; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
+; Revision Name                   ; ram                                         ;
+; Top-level Entity Name           ; ram                                         ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 137                                         ;
+; Total pins                      ; 94                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                             ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CGXFC7C7F23C8     ;                    ;
+; Top-level entity name                                                           ; ram                ; ram                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-4         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                              ;
++----------------------------------+-----------------+------------------------------+---------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path          ; Library ;
++----------------------------------+-----------------+------------------------------+---------------------------------------+---------+
+; ram.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/intelFPGA_lite/18.1/ticklab/ram.sv ;         ;
++----------------------------------+-----------------+------------------------------+---------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimate of Logic utilization (ALMs needed) ; 342       ;
+;                                             ;           ;
+; Combinational ALUT usage for logic          ; 409       ;
+;     -- 7 input functions                    ; 0         ;
+;     -- 6 input functions                    ; 274       ;
+;     -- 5 input functions                    ; 33        ;
+;     -- 4 input functions                    ; 21        ;
+;     -- <=3 input functions                  ; 81        ;
+;                                             ;           ;
+; Dedicated logic registers                   ; 137       ;
+;                                             ;           ;
+; I/O pins                                    ; 94        ;
+;                                             ;           ;
+; Total DSP Blocks                            ; 0         ;
+;                                             ;           ;
+; Maximum fan-out node                        ; clk~input ;
+; Maximum fan-out                             ; 137       ;
+; Total fan-out                               ; 2648      ;
+; Average fan-out                             ; 3.61      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                    ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+; |ram                       ; 409 (409)           ; 137 (137)                 ; 0                 ; 0          ; 94   ; 0            ; |ram                ; ram         ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++----------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                ;
++-----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                          ; Latch Enable Signal ; Free of Timing Hazards ;
++-----------------------------------------------------+---------------------+------------------------+
+; r_data[0]$latch                                     ; Mux290              ; yes                    ;
+; r_data[1]$latch                                     ; Mux290              ; yes                    ;
+; r_data[2]$latch                                     ; Mux290              ; yes                    ;
+; r_data[3]$latch                                     ; Mux290              ; yes                    ;
+; r_data[4]$latch                                     ; Mux290              ; yes                    ;
+; r_data[5]$latch                                     ; Mux290              ; yes                    ;
+; r_data[6]$latch                                     ; Mux290              ; yes                    ;
+; r_data[7]$latch                                     ; Mux290              ; yes                    ;
+; r_data[8]$latch                                     ; Mux290              ; yes                    ;
+; r_data[9]$latch                                     ; Mux290              ; yes                    ;
+; r_data[10]$latch                                    ; Mux290              ; yes                    ;
+; r_data[11]$latch                                    ; Mux290              ; yes                    ;
+; r_data[12]$latch                                    ; Mux290              ; yes                    ;
+; r_data[13]$latch                                    ; Mux290              ; yes                    ;
+; r_data[14]$latch                                    ; Mux290              ; yes                    ;
+; r_data[15]$latch                                    ; Mux290              ; yes                    ;
+; r_data[16]$latch                                    ; Mux290              ; yes                    ;
+; r_data[17]$latch                                    ; Mux290              ; yes                    ;
+; r_data[18]$latch                                    ; Mux290              ; yes                    ;
+; r_data[19]$latch                                    ; Mux290              ; yes                    ;
+; r_data[20]$latch                                    ; Mux290              ; yes                    ;
+; r_data[21]$latch                                    ; Mux290              ; yes                    ;
+; r_data[22]$latch                                    ; Mux290              ; yes                    ;
+; r_data[23]$latch                                    ; Mux290              ; yes                    ;
+; r_data[24]$latch                                    ; Mux290              ; yes                    ;
+; r_data[25]$latch                                    ; Mux290              ; yes                    ;
+; r_data[26]$latch                                    ; Mux290              ; yes                    ;
+; r_data[27]$latch                                    ; Mux290              ; yes                    ;
+; r_data[28]$latch                                    ; Mux290              ; yes                    ;
+; r_data[29]$latch                                    ; Mux290              ; yes                    ;
+; r_data[30]$latch                                    ; Mux290              ; yes                    ;
+; r_data[31]$latch                                    ; Mux290              ; yes                    ;
+; rd_exception_counter_internal[0]                    ; Mux290              ; yes                    ;
+; rd_exception_counter_internal[1]                    ; Mux290              ; yes                    ;
+; rd_exception_counter_internal[2]                    ; Mux290              ; yes                    ;
+; rd_exception_counter_internal[3]                    ; Mux290              ; yes                    ;
+; rd_exception_counter_internal[4]                    ; Mux290              ; yes                    ;
+; rd_exception_counter_internal[5]                    ; Mux290              ; yes                    ;
+; rd_exception_counter_internal[6]                    ; Mux290              ; yes                    ;
+; rd_exception_counter_internal[7]                    ; Mux290              ; yes                    ;
+; Number of user-specified and inferred latches = 40  ;                     ;                        ;
++-----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++---------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                    ;
++-----------------------------------------+---------------------------------------------+
+; Register name                           ; Reason for Removal                          ;
++-----------------------------------------+---------------------------------------------+
+; mem[19][0]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[20][0]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[21][0]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[22][0]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[23][0]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[24][0]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[25][0]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[26][0]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[27][0]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[28][0]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[29][0]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[30][0]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[31][0]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[19][1]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[20][1]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[21][1]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[22][1]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[23][1]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[24][1]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[25][1]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[26][1]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[27][1]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[28][1]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[29][1]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[30][1]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[31][1]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[19][2]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[20][2]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[21][2]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[22][2]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[23][2]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[24][2]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[25][2]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[26][2]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[27][2]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[28][2]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[29][2]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[30][2]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[31][2]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[19][3]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[20][3]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[21][3]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[22][3]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[23][3]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[24][3]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[25][3]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[26][3]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[27][3]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[28][3]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[29][3]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[30][3]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[31][3]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[19][4]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[20][4]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[21][4]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[22][4]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[23][4]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[24][4]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[25][4]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[26][4]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[27][4]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[28][4]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[29][4]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[30][4]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[31][4]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[19][5]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[20][5]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[21][5]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[22][5]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[23][5]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[24][5]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[25][5]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[26][5]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[27][5]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[28][5]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[29][5]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[30][5]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[31][5]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[19][6]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[20][6]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[21][6]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[22][6]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[23][6]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[24][6]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[25][6]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[26][6]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[27][6]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[28][6]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[29][6]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[30][6]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[31][6]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[19][7]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[20][7]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[21][7]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[22][7]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[23][7]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[24][7]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[25][7]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[26][7]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[27][7]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[28][7]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[29][7]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[30][7]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[31][7]                              ; Stuck at GND due to stuck port data_in      ;
+; mem[18][0]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[18][1]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[18][2]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[18][3]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[18][4]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[18][5]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[18][6]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[18][7]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[17][0]                              ; Stuck at GND due to stuck port clock        ;
+; mem[17][1]                              ; Stuck at GND due to stuck port clock        ;
+; mem[17][2]                              ; Stuck at GND due to stuck port clock        ;
+; mem[17][3]                              ; Stuck at GND due to stuck port clock        ;
+; mem[17][4]                              ; Stuck at GND due to stuck port clock        ;
+; mem[17][5]                              ; Stuck at GND due to stuck port clock        ;
+; mem[17][6]                              ; Stuck at GND due to stuck port clock        ;
+; mem[17][7]                              ; Stuck at GND due to stuck port clock        ;
+; mem[16][0]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[16][1]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[16][2]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[16][3]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[16][4]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[16][5]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[16][6]                              ; Stuck at GND due to stuck port clock_enable ;
+; mem[16][7]                              ; Stuck at GND due to stuck port clock_enable ;
+; Total Number of Removed Registers = 128 ;                                             ;
++-----------------------------------------+---------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 137   ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 136   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |ram|mem[18][6]            ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 0 LEs                ; 24 LEs                 ; Yes        ; |ram|mem[17][6]            ;
+; 8:1                ; 8 bits    ; 40 LEs        ; 16 LEs               ; 24 LEs                 ; Yes        ; |ram|mem[0][0]             ;
+; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |ram|mem[16][4]            ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; Yes        ; |ram|mem[1][5]             ;
+; 11:1               ; 8 bits    ; 56 LEs        ; 16 LEs               ; 40 LEs                 ; Yes        ; |ram|mem[2][5]             ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |ram|mem[15][4]            ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |ram|mem[14][4]            ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |ram|mem[13][4]            ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |ram|mem[12][4]            ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |ram|mem[11][4]            ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |ram|mem[10][5]            ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |ram|mem[9][1]             ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |ram|mem[8][4]             ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |ram|mem[7][0]             ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |ram|mem[6][4]             ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |ram|mem[5][5]             ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |ram|mem[4][5]             ;
+; 12:1               ; 8 bits    ; 64 LEs        ; 16 LEs               ; 48 LEs                 ; Yes        ; |ram|mem[3][7]             ;
+; 4:1                ; 24 bits   ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |ram|Mux267                ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |ram|Mux272                ;
+; 10:1               ; 8 bits    ; 48 LEs        ; 48 LEs               ; 0 LEs                  ; No         ; |ram|Mux315                ;
+; 16:1               ; 8 bits    ; 80 LEs        ; 80 LEs               ; 0 LEs                  ; No         ; |ram|Mux264                ;
+; 26:1               ; 8 bits    ; 136 LEs       ; 128 LEs              ; 8 LEs                  ; No         ; |ram|Mux307                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ram ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; ADDR_WIDTH     ; 4     ; Signed Integer                             ;
+; DATA_WIDTH     ; 8     ; Signed Integer                             ;
+; DEPTH          ; 32    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_ff             ; 137                         ;
+;     ENA               ; 136                         ;
+;     plain             ; 1                           ;
+; arriav_lcell_comb     ; 409                         ;
+;     arith             ; 14                          ;
+;         1 data inputs ; 12                          ;
+;         2 data inputs ; 2                           ;
+;     normal            ; 395                         ;
+;         1 data inputs ; 1                           ;
+;         2 data inputs ; 26                          ;
+;         3 data inputs ; 40                          ;
+;         4 data inputs ; 21                          ;
+;         5 data inputs ; 33                          ;
+;         6 data inputs ; 274                         ;
+; boundary_port         ; 94                          ;
+;                       ;                             ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 3.02                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
+    Info: Processing started: Tue Jan 02 23:33:53 2024
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ram -c ram
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file ram.sv
+    Info (12023): Found entity 1: ram File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 1
+Info (12127): Elaborating entity "ram" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at ram.sv(51): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 51
+Warning (10027): Verilog HDL or VHDL warning at the ram.sv(58): index expression is not wide enough to address all of the elements in the array File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 58
+Warning (10027): Verilog HDL or VHDL warning at the ram.sv(61): index expression is not wide enough to address all of the elements in the array File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 61
+Warning (10027): Verilog HDL or VHDL warning at the ram.sv(67): index expression is not wide enough to address all of the elements in the array File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 67
+Warning (10027): Verilog HDL or VHDL warning at the ram.sv(71): index expression is not wide enough to address all of the elements in the array File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 71
+Warning (10230): Verilog HDL assignment warning at ram.sv(75): truncated value with size 32 to match size of target (8) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 75
+Warning (10240): Verilog HDL Always Construct warning at ram.sv(54): inferring latch(es) for variable "r_data", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Warning (10240): Verilog HDL Always Construct warning at ram.sv(54): inferring latch(es) for variable "rd_exception_counter_internal", which holds its previous value in one or more paths through the always construct File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[0]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[1]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[2]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[3]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[4]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[5]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[6]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[7]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[8]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[9]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[10]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[11]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[12]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[13]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[14]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[15]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[16]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[17]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[18]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[19]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[20]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[21]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[22]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[23]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[24]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[25]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[26]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[27]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[28]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[29]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[30]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "r_data[31]" at ram.sv(54) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+Info (10041): Inferred latch for "rd_exception_counter_internal[0]" at ram.sv(74) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 74
+Info (10041): Inferred latch for "rd_exception_counter_internal[1]" at ram.sv(74) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 74
+Info (10041): Inferred latch for "rd_exception_counter_internal[2]" at ram.sv(74) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 74
+Info (10041): Inferred latch for "rd_exception_counter_internal[3]" at ram.sv(74) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 74
+Info (10041): Inferred latch for "rd_exception_counter_internal[4]" at ram.sv(74) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 74
+Info (10041): Inferred latch for "rd_exception_counter_internal[5]" at ram.sv(74) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 74
+Info (10041): Inferred latch for "rd_exception_counter_internal[6]" at ram.sv(74) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 74
+Info (10041): Inferred latch for "rd_exception_counter_internal[7]" at ram.sv(74) File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 74
+Warning (13012): Latch r_data[0]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal r_addr[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 10
+Warning (13012): Latch r_data[1]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal r_addr[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 10
+Warning (13012): Latch r_data[2]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal r_addr[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 10
+Warning (13012): Latch r_data[3]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal r_addr[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 10
+Warning (13012): Latch r_data[4]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal r_addr[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 10
+Warning (13012): Latch r_data[5]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal r_addr[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 10
+Warning (13012): Latch r_data[6]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal r_addr[1] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 10
+Warning (13012): Latch r_data[7]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal r_addr[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 10
+Warning (13012): Latch r_data[8]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[9]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[10]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[11]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[12]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[13]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[14]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[15]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[16]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[17]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[18]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[19]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[20]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[21]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[22]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[23]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[24]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[25]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[26]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[27]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[28]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[29]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[30]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Warning (13012): Latch r_data[31]$latch has unsafe behavior File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 54
+    Warning (13013): Ports D and ENA on the latch are fed by the same signal select[0] File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 8
+Info (286030): Timing-Driven Synthesis is running
+Info (144001): Generated suppressed messages file C:/intelFPGA_lite/18.1/ticklab/output_files/ram.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 504 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 44 input pins
+    Info (21059): Implemented 50 output pins
+    Info (21061): Implemented 410 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 73 warnings
+    Info: Peak virtual memory: 4832 megabytes
+    Info: Processing ended: Tue Jan 02 23:34:04 2024
+    Info: Elapsed time: 00:00:11
+    Info: Total CPU time (on all processors): 00:00:08
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/intelFPGA_lite/18.1/ticklab/output_files/ram.map.smsg.
+
+

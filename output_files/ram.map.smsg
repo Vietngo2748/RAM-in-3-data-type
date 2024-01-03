@@ -1,0 +1,1 @@
+Warning (10268): Verilog HDL information at ram.sv(21): always construct contains both blocking and non-blocking assignments File: C:/intelFPGA_lite/18.1/ticklab/ram.sv Line: 21

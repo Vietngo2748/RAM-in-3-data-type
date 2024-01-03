@@ -1,0 +1,353 @@
+// Copyright (C) 2018  Intel Corporation. All rights reserved.
+// Your use of Intel Corporation's design tools, logic functions 
+// and other software and tools, and its AMPP partner logic 
+// functions, and any output files from any of the foregoing 
+// (including device programming or simulation files), and any 
+// associated documentation or information are expressly subject 
+// to the terms and conditions of the Intel Program License 
+// Subscription Agreement, the Intel Quartus Prime License Agreement,
+// the Intel FPGA IP License Agreement, or other applicable license
+// agreement, including, without limitation, that your use is for
+// the sole purpose of programming logic devices manufactured by
+// Intel and sold by Intel or its authorized distributors.  Please
+// refer to the applicable agreement for further details.
+
+// *****************************************************************************
+// This file contains a Verilog test bench with test vectors .The test vectors  
+// are exported from a vector file in the Quartus Waveform Editor and apply to  
+// the top level entity of the current Quartus project .The user can use this   
+// testbench to simulate his design using a third-party simulation tool .       
+// *****************************************************************************
+// Generated on "01/02/2024 23:35:37"
+                                                                                
+// Verilog Test Bench (with test vectors) for design :                          ram
+// 
+// Simulation tool : 3rd Party
+// 
+
+`timescale 1 ps/ 1 ps
+module ram_vlg_vec_tst();
+// constants                                           
+// general purpose registers
+reg clk;
+reg [3:0] r_addr;
+reg [1:0] select;
+reg [3:0] w_addr;
+reg [31:0] w_data;
+reg w_en;
+// wires                                               
+wire [31:0] r_data;
+wire [7:0] rd_exception_counter;
+wire rd_exception_flag;
+wire [7:0] wr_exception_counter;
+wire wr_exception_flag;
+
+// assign statements (if any)                          
+ram i1 (
+// port map - connection between master ports and signals/registers   
+	.clk(clk),
+	.r_addr(r_addr),
+	.r_data(r_data),
+	.rd_exception_counter(rd_exception_counter),
+	.rd_exception_flag(rd_exception_flag),
+	.select(select),
+	.w_addr(w_addr),
+	.w_data(w_data),
+	.w_en(w_en),
+	.wr_exception_counter(wr_exception_counter),
+	.wr_exception_flag(wr_exception_flag)
+);
+initial 
+begin 
+#1000000 $finish;
+end 
+
+// clk
+initial
+begin
+	repeat(16)
+	begin
+		clk = 1'b0;
+		clk = #30000 1'b1;
+		# 30000;
+	end
+	clk = 1'b0;
+	clk = #30000 1'b1;
+end 
+// r_addr[ 3 ]
+initial
+begin
+	r_addr[3] = 1'b0;
+end 
+// r_addr[ 2 ]
+initial
+begin
+	r_addr[2] = 1'b0;
+end 
+// r_addr[ 1 ]
+initial
+begin
+	r_addr[1] = 1'b0;
+	r_addr[1] = #360000 1'b1;
+	r_addr[1] = #120000 1'b0;
+end 
+// r_addr[ 0 ]
+initial
+begin
+	r_addr[0] = 1'b0;
+	r_addr[0] = #300000 1'b1;
+	r_addr[0] = #60000 1'b0;
+	r_addr[0] = #60000 1'b1;
+	r_addr[0] = #60000 1'b0;
+end 
+// select[ 1 ]
+initial
+begin
+	select[1] = 1'b0;
+end 
+// select[ 0 ]
+initial
+begin
+	select[0] = 1'b0;
+	select[0] = #370000 1'b1;
+	select[0] = #50000 1'b0;
+end 
+// w_addr[ 3 ]
+initial
+begin
+	w_addr[3] = 1'b0;
+end 
+// w_addr[ 2 ]
+initial
+begin
+	w_addr[2] = 1'b0;
+end 
+// w_addr[ 1 ]
+initial
+begin
+	w_addr[1] = 1'b0;
+	w_addr[1] = #120000 1'b1;
+	w_addr[1] = #120000 1'b0;
+end 
+// w_addr[ 0 ]
+initial
+begin
+	w_addr[0] = 1'b0;
+	w_addr[0] = #70000 1'b1;
+	w_addr[0] = #50000 1'b0;
+	w_addr[0] = #60000 1'b1;
+	w_addr[0] = #60000 1'b0;
+end 
+// w_data[ 31 ]
+initial
+begin
+	w_data[31] = 1'b0;
+end 
+// w_data[ 30 ]
+initial
+begin
+	w_data[30] = 1'b0;
+	w_data[30] = #70000 1'b1;
+	w_data[30] = #50000 1'b0;
+end 
+// w_data[ 29 ]
+initial
+begin
+	w_data[29] = 1'b0;
+end 
+// w_data[ 28 ]
+initial
+begin
+	w_data[28] = 1'b1;
+	w_data[28] = #70000 1'b0;
+	w_data[28] = #50000 1'b1;
+end 
+// w_data[ 27 ]
+initial
+begin
+	w_data[27] = 1'b0;
+end 
+// w_data[ 26 ]
+initial
+begin
+	w_data[26] = 1'b0;
+	w_data[26] = #70000 1'b1;
+	w_data[26] = #50000 1'b0;
+end 
+// w_data[ 25 ]
+initial
+begin
+	w_data[25] = 1'b0;
+end 
+// w_data[ 24 ]
+initial
+begin
+	w_data[24] = 1'b1;
+	w_data[24] = #70000 1'b0;
+	w_data[24] = #50000 1'b1;
+end 
+// w_data[ 23 ]
+initial
+begin
+	w_data[23] = 1'b0;
+end 
+// w_data[ 22 ]
+initial
+begin
+	w_data[22] = 1'b0;
+	w_data[22] = #70000 1'b1;
+	w_data[22] = #50000 1'b0;
+end 
+// w_data[ 21 ]
+initial
+begin
+	w_data[21] = 1'b1;
+	w_data[21] = #70000 1'b0;
+	w_data[21] = #50000 1'b1;
+end 
+// w_data[ 20 ]
+initial
+begin
+	w_data[20] = 1'b0;
+	w_data[20] = #70000 1'b1;
+	w_data[20] = #50000 1'b0;
+end 
+// w_data[ 19 ]
+initial
+begin
+	w_data[19] = 1'b0;
+end 
+// w_data[ 18 ]
+initial
+begin
+	w_data[18] = 1'b0;
+	w_data[18] = #70000 1'b1;
+	w_data[18] = #50000 1'b0;
+end 
+// w_data[ 17 ]
+initial
+begin
+	w_data[17] = 1'b1;
+	w_data[17] = #70000 1'b0;
+	w_data[17] = #50000 1'b1;
+end 
+// w_data[ 16 ]
+initial
+begin
+	w_data[16] = 1'b0;
+	w_data[16] = #70000 1'b1;
+	w_data[16] = #50000 1'b0;
+end 
+// w_data[ 15 ]
+initial
+begin
+	w_data[15] = 1'b0;
+end 
+// w_data[ 14 ]
+initial
+begin
+	w_data[14] = 1'b0;
+	w_data[14] = #70000 1'b1;
+	w_data[14] = #50000 1'b0;
+end 
+// w_data[ 13 ]
+initial
+begin
+	w_data[13] = 1'b1;
+end 
+// w_data[ 12 ]
+initial
+begin
+	w_data[12] = 1'b1;
+	w_data[12] = #70000 1'b0;
+	w_data[12] = #50000 1'b1;
+end 
+// w_data[ 11 ]
+initial
+begin
+	w_data[11] = 1'b0;
+end 
+// w_data[ 10 ]
+initial
+begin
+	w_data[10] = 1'b0;
+	w_data[10] = #70000 1'b1;
+	w_data[10] = #50000 1'b0;
+end 
+// w_data[ 9 ]
+initial
+begin
+	w_data[9] = 1'b1;
+end 
+// w_data[ 8 ]
+initial
+begin
+	w_data[8] = 1'b1;
+	w_data[8] = #70000 1'b0;
+	w_data[8] = #50000 1'b1;
+end 
+// w_data[ 7 ]
+initial
+begin
+	w_data[7] = 1'b0;
+end 
+// w_data[ 6 ]
+initial
+begin
+	w_data[6] = 1'b1;
+	w_data[6] = #120000 1'b0;
+	w_data[6] = #120000 1'b1;
+end 
+// w_data[ 5 ]
+initial
+begin
+	w_data[5] = 1'b0;
+	w_data[5] = #70000 1'b1;
+	w_data[5] = #110000 1'b0;
+end 
+// w_data[ 4 ]
+initial
+begin
+	w_data[4] = 1'b0;
+	w_data[4] = #70000 1'b1;
+	w_data[4] = #50000 1'b0;
+end 
+// w_data[ 3 ]
+initial
+begin
+	w_data[3] = 1'b0;
+	w_data[3] = #180000 1'b1;
+	w_data[3] = #60000 1'b0;
+end 
+// w_data[ 2 ]
+initial
+begin
+	w_data[2] = 1'b1;
+	w_data[2] = #120000 1'b0;
+	w_data[2] = #120000 1'b1;
+end 
+// w_data[ 1 ]
+initial
+begin
+	w_data[1] = 1'b0;
+	w_data[1] = #70000 1'b1;
+	w_data[1] = #110000 1'b0;
+end 
+// w_data[ 0 ]
+initial
+begin
+	w_data[0] = 1'b0;
+	w_data[0] = #70000 1'b1;
+	w_data[0] = #50000 1'b0;
+	w_data[0] = #60000 1'b1;
+	w_data[0] = #60000 1'b0;
+end 
+
+// w_en
+initial
+begin
+	w_en = 1'b1;
+	w_en = #240000 1'b0;
+end 
+endmodule
+

@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/intelFPGA_lite/18.1/ticklab/simulation/qsim
+vram
+!s110 1704213339
+!i10b 1
+!s100 HC=;M0;AI812lnjLgnC_D3
+IBV>UXJo=`:>IQicaaQ6z63
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1704213339
+8ram.vo
+Fram.vo
+L0 31
+Z2 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z3 !s108 1704213339.000000
+!s107 ram.vo|
+!s90 -work|work|ram.vo|
+!i113 1
+Z4 o-work work
+Z5 tCvgOpt 0
+vram_vlg_vec_tst
+!s110 1704213340
+!i10b 1
+!s100 l@T6e4omF;5jPNCbffD8j0
+IKOT]inPnhUnc?E:5lPY3I3
+R1
+R0
+w1704213337
+8Waveform12.vwf.vt
+FWaveform12.vwf.vt
+L0 29
+R2
+r1
+!s85 0
+31
+R3
+!s107 Waveform12.vwf.vt|
+!s90 -work|work|Waveform12.vwf.vt|
+!i113 1
+R4
+R5

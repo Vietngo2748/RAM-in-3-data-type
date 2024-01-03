@@ -1,0 +1,35 @@
+# do ram.do
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:35:39 on Jan 02,2024
+# vlog -work work ram.vo 
+# -- Compiling module ram
+# 
+# Top level modules:
+# 	ram
+# End time: 23:35:39 on Jan 02,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 23:35:39 on Jan 02,2024
+# vlog -work work Waveform12.vwf.vt 
+# -- Compiling module ram_vlg_vec_tst
+# 
+# Top level modules:
+# 	ram_vlg_vec_tst
+# End time: 23:35:40 on Jan 02,2024, Elapsed time: 0:00:01
+# Errors: 0, Warnings: 0
+# vsim -novopt -c -t 1ps -L cyclonev_ver -L altera_ver -L altera_mf_ver -L 220model_ver -L sgate_ver -L altera_lnsim_ver work.ram_vlg_vec_tst 
+# Start time: 23:35:40 on Jan 02,2024
+# Loading work.ram_vlg_vec_tst
+# Loading work.ram
+# Loading cyclonev_ver.cyclonev_io_obuf
+# Loading cyclonev_ver.cyclonev_io_ibuf
+# Loading cyclonev_ver.cyclonev_lcell_comb
+# Loading cyclonev_ver.cyclonev_clkena
+# Loading altera_ver.dffeas
+# Loading altera_ver.PRIM_GDFF_LOW
+# after#25
+# ** Note: $finish    : Waveform12.vwf.vt(62)
+#    Time: 1 us  Iteration: 0  Instance: /ram_vlg_vec_tst
+# End time: 23:35:40 on Jan 02,2024, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
